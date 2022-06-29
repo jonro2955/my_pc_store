@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+### 15 High-Converting Landing Pages guide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://unbounce.com/landing-page-examples/high-converting-landing-pages/
 
-## Available Scripts
+### blueprint
 
-In the project directory, you can run:
+https://amielfilarca.me/shopping-cart
 
-### `npm start`
+### good landing page ex:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://seb-graf.github.io/fashionify/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### image & specs
 
-### `npm test`
+https://www.ibuypower.com/store/AMD-Ryzen-Streaming-PC-Daily-Deal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Typescript workflow:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create a file called index.ts and write some typescript in it. Then, in the cli, run 'tsc index.ts'. This compiles the typescript in index.ts into javascript in a new file called index.js in the same directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The command 'tsc index.ts' is short for 'tsc index.ts index.js', which compiles ts into a new js file of the same name. If you want the js output file name to be something other than 'index.js', you can specify it like this: 'tsc index.ts somefile.js'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The watch mode recompiles on every save: 'tsc index.ts -w'
 
-### `npm run eject`
+### tsconfig workflow:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The previous workflow is fine if you have a simple html, css, and ts file structure, but if you have a more complex project that is organized into /src and a output file like /public (or /dist or whatever), it is essential to use a tsconfig.json file so you can run typescript compile commands (tsc ...)without specifying input/output filepaths each time.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run 'tsc --init' to create tsconfig.json and in it, inside "compilerOptions", set "rootDir" to "./src" and "outDir" to "./public". And just outside of "compilerOptions", write "'include':["src"]" to only compile things from the src folder. Otherwise, any ts file anywhere will be compiled into /public.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Now running 'tsc' (or better yet, 'tsc -w' for watch mode) will compile the ts files in /src and output them into js file in /public.
