@@ -7,14 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   background-image: url(./images/bg.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
-  background-size:cover;
-
-}
-#Home {
-  padding: 100px 0;
+  background-size: cover;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.Page {
+  padding: 75px 0;
+}
+.shopColumn {
+  gap: 100px;
+}
+.noUnderline{
+  text-decoration: none;
 }

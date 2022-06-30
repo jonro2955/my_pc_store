@@ -5,6 +5,7 @@ https://unbounce.com/landing-page-examples/high-converting-landing-pages/
 ### blueprint
 
 https://amielfilarca.me/shopping-cart
+https://github.com/amielfilarca/shopping-cart
 
 ### good landing page ex:
 

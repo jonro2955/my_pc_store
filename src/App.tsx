@@ -2,7 +2,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import Checkout from "./pages/Checkout";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/shop" element={<Shop />}></Route>
-          <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/product" element={<Product />}></Route>
         </Routes>
       </HashRouter>
     </div>
