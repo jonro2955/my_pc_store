@@ -5,7 +5,7 @@ import acc3 from "../../images/acc3.webp";
 
 const computers = [
   {
-    id: "acc1",
+    id: "keyboard",
     name: "Keyboard",
     description:'Backlit / Wired / Brightness Dial',
     category: "accessories",
@@ -14,7 +14,7 @@ const computers = [
     gallery: [acc1],
   },
   {
-    id: "acc2",
+    id: "headset",
     name: "Headset",
     description:'105dB / Omnidirectional Mic / USB Powered',
     category: "accessories",
@@ -23,7 +23,7 @@ const computers = [
     gallery: [acc2],
   },
   {
-    id: "acc3",
+    id: "mousepad",
     name: "Mousepad",
     description:'Low Friction Surface / Anti-Slip Base',
     category: "accessories",

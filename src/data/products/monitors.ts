@@ -4,27 +4,27 @@ import monitor3 from "../../images/monitor3.webp";
 
 const monitors = [
   {
-    id: "monitor1",
+    id: "asus-monitor",
     name: "Asus Monitor",
-    description:'24" / 1920x1080 / 165Hz / 0.5ms',
+    description: '24" / 1920x1080 / 165Hz / 0.5ms',
     category: "monitors",
     price: 200,
     image: monitor1,
     gallery: [monitor1],
   },
   {
-    id: "monitor2",
+    id: "msi-monitor",
     name: "MSI Monitor",
-    description:'31.5" / 2560x1440 / 165Hz / 1ms / Curved',
+    description: '31.5" / 2560x1440 / 165Hz / 1ms / Curved',
     category: "monitors",
     price: 250,
     image: monitor2,
     gallery: [monitor2],
   },
   {
-    id: "monitor3",
+    id: "gigabyte-monitor",
     name: "Gigabyte Monitor",
-    description:'34" / 3440x1440 / 144Hz / 1ms / Curved',
+    description: '34" / 3440x1440 / 144Hz / 1ms / Curved',
     category: "monitors",
     price: 300,
     image: monitor3,

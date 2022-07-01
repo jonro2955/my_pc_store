@@ -23,3 +23,10 @@ code {
 .noUnderline{
   text-decoration: none;
 }
+.shopDisplayImage:hover{
+  /* on hover, magnify this image but with no overflow beyond its div*/
+
+}
+.categoryBtn:hover{
+  /* add some hover effect */
+}

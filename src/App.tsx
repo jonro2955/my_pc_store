@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div id="App">
       <HashRouter basename="/">
@@ -17,6 +17,6 @@ function App() {
       </HashRouter>
     </div>
   );
-}
+};
 
 export default App;
