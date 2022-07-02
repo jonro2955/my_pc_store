@@ -15,7 +15,7 @@ const monitors = [
   {
     id: "msi-monitor",
     name: "MSI Monitor",
-    description: '31.5" / 2560x1440 / 165Hz / 1ms / Curved',
+    description: '31.5" / 2560x1440 / 165Hz / 1ms',
     category: "monitors",
     price: 250,
     image: monitor2,
@@ -24,7 +24,7 @@ const monitors = [
   {
     id: "gigabyte-monitor",
     name: "Gigabyte Monitor",
-    description: '34" / 3440x1440 / 144Hz / 1ms / Curved',
+    description: '34" / 3440x1440 / 144Hz / 1ms',
     category: "monitors",
     price: 300,
     image: monitor3,

@@ -3,18 +3,23 @@ import { Link } from "react-router-dom";
 import allProducts from "../data/products/allProducts";
 import categories from "../data/categories";
 import { Product } from "../data/typeModels";
+import Stars from "../components/Stars"
 
-const Shop: React.FC = () => {
-  const [currentCategory, setcurrentCategory] = useState<string>("all");
+interface props {
+  currentCategory: string;
+  setcurrentCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Shop: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
   const [productList, setProductList] = useState<Array<Product>>(allProducts);
 
   useEffect(() => {
     let categoryBtnList = document.querySelectorAll(".categoryBtn");
     categoryBtnList.forEach((btn) => {
       if (btn.getAttribute("id") === currentCategory) {
-        btn.classList.add( "btn", "btn-primary");
+        btn.classList.add("btn-primary");
       } else {
-        btn.classList.remove( "btn", "btn-primary");
+        btn.classList.remove("btn-primary");
       }
     });
     if (currentCategory === "all") {
@@ -29,18 +34,18 @@ const Shop: React.FC = () => {
   }, [currentCategory]);
 
   return (
-    <div className="container-lg  mt-md-5">
+    <div className="container-lg">
       <div className="row justify-content-center align-items-start">
-        {/* category selector column */}
-        <div className="col text-center">
+        {/* category selector */}
+        <div className=" col text-center">
           <p className="display-6 text-white">Shop/</p>
           {categories &&
             categories.map((category, i) => (
               <p
-                className="categoryBtn text-white "
+                className="categoryBtn btn hover-underline-animation text-white "
                 key={i}
                 id={category.id}
-                role="button"
+                // role="button"
                 onClick={() => {
                   setcurrentCategory(category.id);
                 }}
@@ -49,20 +54,24 @@ const Shop: React.FC = () => {
               </p>
             ))}
         </div>
-        {/* product list column */}
-        <div className="col-12 col-md-10 d-flex flex-wrap justify-content-center ">
+        {/* product list */}
+        <div className=" col-12 d-flex flex-wrap justify-content-center ">
           {productList &&
             productList.map((product, i) => (
-              <Link
-                className="noUnderline shopDisplayImage text-light col-7 col-md-6 col-xl-4 text-center pb-5"
-                to={`/product:${product.id}`}
+              <div
+                className="zoom text-center d-flex flex-column justify-content-between col-9 col-sm-6 col-md-4 col-lg-3 pb-3 m-1 m-sm-2 m-md-3 m-lg-4"
                 key={i}
               >
-                <img src={product.image} className="img-fluid" alt="lightning 1" />
-                <div className="display-6">{product.name}</div>
-                <div className="fw-bold">{product.description}</div>
-                <div className="">${product.price.toFixed(2)}</div>
-              </Link>
+                <Link className="noUnderLine text-white " to={`/${product.id}`}>
+                  <img src={product.image} className="img-fluid" alt={product.name} />
+                  <div className="fw-bold">{product.name}</div>
+                  <Stars/>
+                  <div className="m-2">
+                    <small>${product.price.toFixed(2)}</small>
+                  </div>
+                  <div>Free Shipping</div>
+                </Link>
+              </div>
             ))}
         </div>
       </div>

@@ -7,7 +7,7 @@ const computers = [
   {
     id: "keyboard",
     name: "Keyboard",
-    description:'Backlit / Wired / Brightness Dial',
+    description:'Backlit / Brightness Dial',
     category: "accessories",
     price: 50,
     image: acc1,
@@ -16,7 +16,7 @@ const computers = [
   {
     id: "headset",
     name: "Headset",
-    description:'105dB / Omnidirectional Mic / USB Powered',
+    description:'105dB / Omnidirectional Mic',
     category: "accessories",
     price: 25,
     image: acc2,
@@ -25,7 +25,7 @@ const computers = [
   {
     id: "mousepad",
     name: "Mousepad",
-    description:'Low Friction Surface / Anti-Slip Base',
+    description:'Low Friction / Anti-Slip Base',
     category: "accessories",
     price: 10,
     image: acc3,
