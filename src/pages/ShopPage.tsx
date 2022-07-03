@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import allProducts from "../data/products/allProducts";
 import categories from "../data/categories";
-import { Product } from "../data/typeModels";
-import Stars from "../components/Stars"
+import { ProductType } from "../data/typeModels";
+import Stars from "../components/Stars";
 
 interface props {
   currentCategory: string;
   setcurrentCategory: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Shop: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
-  const [productList, setProductList] = useState<Array<Product>>(allProducts);
+const ShopPage: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
+  const [productList, setProductList] = useState<Array<ProductType>>(allProducts);
 
+  // Manage category selection
   useEffect(() => {
     let categoryBtnList = document.querySelectorAll(".categoryBtn");
     categoryBtnList.forEach((btn) => {
@@ -36,16 +37,15 @@ const Shop: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
   return (
     <div className="container-lg">
       <div className="row justify-content-center align-items-start">
-        {/* category selector */}
         <div className=" col text-center">
-          <p className="display-6 text-white">Shop/</p>
+          <p className="display-6 text-white">Shop</p>
+          {/* category selectors */}
           {categories &&
             categories.map((category, i) => (
               <p
                 className="categoryBtn btn hover-underline-animation text-white "
                 key={i}
                 id={category.id}
-                // role="button"
                 onClick={() => {
                   setcurrentCategory(category.id);
                 }}
@@ -54,8 +54,8 @@ const Shop: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
               </p>
             ))}
         </div>
-        {/* product list */}
         <div className=" col-12 d-flex flex-wrap justify-content-center ">
+          {/* product list */}
           {productList &&
             productList.map((product, i) => (
               <div
@@ -65,11 +65,9 @@ const Shop: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
                 <Link className="noUnderLine text-white " to={`/${product.id}`}>
                   <img src={product.image} className="img-fluid" alt={product.name} />
                   <div className="fw-bold">{product.name}</div>
-                  <Stars/>
-                  <div className="m-2">
-                    <small>${product.price.toFixed(2)}</small>
-                  </div>
-                  <div>Free Shipping</div>
+                  <Stars />
+                  <div>${product.price.toFixed(2)}</div>
+                  <small>Free Shipping</small>
                 </Link>
               </div>
             ))}
@@ -79,4 +77,4 @@ const Shop: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
   );
 };
 
-export default Shop;
+export default ShopPage;

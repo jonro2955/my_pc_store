@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import featureImg from "../images/lightning1.webp";
-import bgImg from "../../images/bg.jpg";
 
-const Home: React.FC = () => {
-  useEffect(() => {
-    // document.body.style.backgroundImage = bgImg;
-
-  }, []);
-
+const HomePage: React.FC = () => {
   return (
     <div className="pt-5 container-lg mb-3">
       <div className="row g-4 justify-content-center align-items-center">
@@ -33,4 +26,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage;
