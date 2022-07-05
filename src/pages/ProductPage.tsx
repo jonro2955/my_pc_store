@@ -8,10 +8,9 @@ interface props {
   cart: ProductType[];
   addToCart: (product: ProductType) => void;
   showCart: () => void;
-  closeCart: () => void;
 }
 
-const ProductPage: React.FC<props> = ({ cart, addToCart, showCart, closeCart }) => {
+const ProductPage: React.FC<props> = ({ cart, addToCart, showCart}) => {
   let productId = useParams().productId;
 
   let product = allProducts.find((item) => {
@@ -22,7 +21,7 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart, closeCart }) 
     description: "Product not found",
     category: "None",
     price: 0,
-    quantity:0,
+    quantity: 0,
     image: "",
     gallery: [""],
   };
@@ -30,9 +29,9 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart, closeCart }) 
   return (
     <div className="pt-5 container-lg mb-3">
       <div className="row g-4 justify-content-center align-items-center">
-        {/* left side images */}
+        {/* left side: product images */}
         <ImageViewer gallery={product.gallery} />
-        {/* right side info/buttons */}
+        {/* right side: info/buttons */}
         <div className="col-12 col-md-6 text-center text-white ">
           <div className="row ">
             {/* product name and stars*/}
@@ -62,7 +61,7 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart, closeCart }) 
                 Buy It Now
               </button>
               <h3 className="">${product.price.toFixed(2)}</h3>
-              <div>Free Shipping</div>
+              <div className="text-warning">Free Shipping</div>
             </div>
           </div>
           {/* product details */}
@@ -70,10 +69,6 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart, closeCart }) 
             <h3 className="">Product Details:</h3>
             <div className="">{product.description}</div>
           </div>
-
-          {/*  */}
-
-          {/*  */}
         </div>
       </div>
     </div>

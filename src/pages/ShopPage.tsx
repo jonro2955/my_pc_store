@@ -67,7 +67,7 @@ const ShopPage: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
                   <div className="fw-bold">{product.name}</div>
                   <Stars />
                   <div>${product.price.toFixed(2)}</div>
-                  <small>Free Shipping</small>
+                  <small className="text-warning">Free Shipping</small>
                 </Link>
               </div>
             ))}

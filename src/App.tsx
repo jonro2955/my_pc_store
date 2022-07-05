@@ -1,16 +1,16 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import { ProductType } from "./data/typeModels";
 import CartModal from "./components/CartModal";
 
 const App: React.FC = () => {
   const [currentCategory, setcurrentCategory] = useState<string>("all");
-  /* A product is an object of the following format:
-
+  /* 
   interface Product {
     id: string,
     name: string,
@@ -40,8 +40,9 @@ const App: React.FC = () => {
   const showCart = () => setCartOn(true);
   const closeCart = () => setCartOn(false);
 
+  // array.slice() is required to re-render the array state maps.
   const addToCart = (item: ProductType) => {
-    let tempCart = cart;
+    let tempCart = cart.slice();
     let existingItem = tempCart.find((x) => {
       return x.id === item.id;
     });
@@ -52,20 +53,48 @@ const App: React.FC = () => {
       tempCart.push(item);
     }
     setCart(tempCart);
-    console.log(tempCart);
   };
 
   const removeFromCart = (index: number) => {
-    let tempCart = cart;
+    let tempCart = cart.slice();
     tempCart.splice(index, 1);
-    console.log(tempCart);
     setCart(tempCart);
   };
+
+  const incrementCartItem = (index: number) => {
+    let tempCart = cart.slice();
+    tempCart[index].quantity++;
+    setCart(tempCart);
+  };
+
+  const decrementCartItem = (index: number) => {
+    let tempCart = cart.slice();
+    if (tempCart[index].quantity > 1) {
+      tempCart[index].quantity--;
+    } else {
+      removeFromCart(index);
+    }
+    setCart(tempCart);
+  };
+
+  const getCartTotal = (): number => {
+    let total = 0;
+    if (cart.length > 0) {
+      cart.forEach((it) => {
+        total += it.price * it.quantity;
+      });
+    }
+    return total;
+  };
+
+  useEffect(() => {
+    // console.log(cart);
+  }, [cart]);
 
   return (
     <div id="App">
       <HashRouter basename="/">
-        <Navbar setcurrentCategory={setcurrentCategory} showCart={showCart}/>
+        <Navbar setcurrentCategory={setcurrentCategory} showCart={showCart} />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route
@@ -76,23 +105,22 @@ const App: React.FC = () => {
           ></Route>
           <Route
             path="/:productId"
-            element={
-              <ProductPage
-                cart={cart}
-                addToCart={addToCart}
-                showCart={showCart}
-                closeCart={closeCart}
-              />
-            }
+            element={<ProductPage cart={cart} addToCart={addToCart} showCart={showCart} />}
+          ></Route>
+          <Route
+            path="/checkout"
+            element={<CheckoutPage cart={cart} getCartTotal={getCartTotal} />}
           ></Route>
         </Routes>
       </HashRouter>
       <CartModal
         cart={cart}
         cartOn={cartOn}
-        showCart={showCart}
         closeCart={closeCart}
         removeFromCart={removeFromCart}
+        incrementCartItem={incrementCartItem}
+        decrementCartItem={decrementCartItem}
+        getCartTotal={getCartTotal}
       />
     </div>
   );

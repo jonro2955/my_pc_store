@@ -17,8 +17,9 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="col-md-5 text-center d-block position-relative">
-          <Link to="/shop">
+          <Link to="/lightning1">
             <img src={featureImg} className="img-fluid" alt="lightning1" />
+            <div>Lightning 1 Gaming PC</div>
           </Link>
         </div>
       </div>
