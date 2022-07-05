@@ -78,14 +78,25 @@ const App: React.FC = () => {
   };
 
   const getCartTotal = (): number => {
+    let amount = 0;
+    if (cart.length > 0) {
+      cart.forEach((it) => {
+        amount += it.price * it.quantity;
+      });
+    }
+    return amount;
+  };
+
+  const getCartTally = (): number => {
     let total = 0;
     if (cart.length > 0) {
       cart.forEach((it) => {
-        total += it.price * it.quantity;
+        total += it.quantity;
       });
     }
     return total;
   };
+
 
   useEffect(() => {
     // console.log(cart);
@@ -94,7 +105,7 @@ const App: React.FC = () => {
   return (
     <div id="App">
       <HashRouter basename="/">
-        <Navbar setcurrentCategory={setcurrentCategory} showCart={showCart} />
+        <Navbar setcurrentCategory={setcurrentCategory} getCartTally={getCartTally} showCart={showCart} />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route

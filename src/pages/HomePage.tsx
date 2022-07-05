@@ -11,15 +11,15 @@ const HomePage: React.FC = () => {
             with the power of <span className="text-warning">lightning</span>
           </p>
           <div className="m-5 text-center">
-            <Link className="btn btn-primary btn-lg" to="/shop">
+            <Link className="btn btn-light btn-lg" to="/shop">
               Shop Now
             </Link>
           </div>
         </div>
         <div className="col-md-5 text-center d-block position-relative">
-          <Link to="/lightning1">
+          <Link className="noUnderLine text-white" to="/lightning1">
             <img src={featureImg} className="img-fluid" alt="lightning1" />
-            <div>Lightning 1 Gaming PC</div>
+            <div  className="btn btn-light">Our Lightning 1 Gaming PC</div>
           </Link>
         </div>
       </div>

@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 interface props {
   setcurrentCategory: React.Dispatch<React.SetStateAction<string>>;
   showCart: () => void;
+  getCartTally: () => number;
 }
 
-const Navbar: React.FC<props> = ({ setcurrentCategory, showCart }) => {
+const Navbar: React.FC<props> = ({ setcurrentCategory, showCart, getCartTally }) => {
   return (
     <div>
       <Link
@@ -43,7 +44,7 @@ const Navbar: React.FC<props> = ({ setcurrentCategory, showCart }) => {
                   role="button"
                   onClick={showCart}
                 >
-                  <div className="px-2 hover-underline-animation text-light fw-bold">Cart</div>
+                  <div className="px-2 hover-underline-animation text-light fw-bold">{`Cart (${getCartTally()})`}</div>
                 </a>
               </li>
             </ul>
