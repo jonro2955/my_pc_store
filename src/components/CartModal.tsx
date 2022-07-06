@@ -43,7 +43,7 @@ const CartModal: React.FC<props> = ({
           <div className="text-center ">
             {/* Cart items output map: */}
             {cart.map((item, i) => (
-              <div className="container mb-1 bg-info rounded p-2" key={i}>
+              <div className="container mb-1 bg-primary rounded p-2" key={i}>
                 <div className="row">
                   {/* left col: item image */}
                   <div className="col-12 col-sm-3 d-flex justify-content-center align-items-center ">
@@ -51,23 +51,24 @@ const CartModal: React.FC<props> = ({
                   </div>
                   <div className="col">
                     {/* right col line 1: item name and price */}
-                    <div className="d-flex justify-content-between align-items-center text-center">
+                    <div className="d-flex justify-content-between align-items-start text-center">
                       <h5>{item.name}</h5>
                       <div>Price: ${item.price.toFixed(2)}</div>
                     </div>
                     {/* right col line 2: quantity control buttons */}
                     <div className="d-flex justify-content-between align-items-center text-center">
-                      <button
-                        className="btn btn-sm btn-secondary"
+                      <a
+                        className="text-white "
+                        role="button"
                         onClick={() => {
                           removeFromCart(i);
                         }}
                       >
-                        Remove
-                      </button>
+                        <small>Remove</small>
+                      </a>
                       <div className="d-flex text-center">
                         <button
-                          className="btn btn-sm btn-warning"
+                          className="btn btn-sm btn-info"
                           onClick={() => {
                             decrementCartItem(i);
                           }}
@@ -82,7 +83,7 @@ const CartModal: React.FC<props> = ({
                           readOnly
                         />
                         <button
-                          className="btn btn-sm btn-warning"
+                          className="btn btn-sm btn-info"
                           onClick={() => {
                             incrementCartItem(i);
                           }}
@@ -101,7 +102,7 @@ const CartModal: React.FC<props> = ({
                 {/* Subtotal */}
                 <h4 className="p-2">{`Subtotal: $${getCartTotal().toFixed(2)}`}</h4>
                 {/* Checkout button */}
-                <a className="btn btn-warning" href="/#/checkout1" onClick={closeCart}>
+                <a className="btn btn-warning w-100" href="/#/checkout1" onClick={closeCart}>
                   Checkout
                 </a>
               </>

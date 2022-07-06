@@ -6,7 +6,6 @@ import visaIcon from "../images/icon-visa.svg";
 import paypalIcon from "../images/icon-paypal.svg";
 import btcIcon from "../images/icon-bitcoin.png";
 
-
 const Checkout2: React.FC = () => {
   return (
     <div className="container rounded">
@@ -15,7 +14,7 @@ const Checkout2: React.FC = () => {
         <div className="col-8">
           {/* Form start*/}
           <form className="d-flex flex-column gap-3 p-3">
-            <h3>Choose a payment method</h3>
+            <h3 className="text-center">Choose a payment method</h3>
             {/* payment type radio selectors */}
             <div className="d-flex flex-column ">
               {/* credit card */}
@@ -46,6 +45,7 @@ const Checkout2: React.FC = () => {
                   id="paypal"
                   name="payment_type"
                   value="PayPal"
+                  disabled
                 />
                 <label className="col" htmlFor="paypal">
                   PayPal
@@ -62,6 +62,7 @@ const Checkout2: React.FC = () => {
                   id="bitcoin"
                   name="payment_type"
                   value="PayPal"
+                  disabled
                 />
                 <label className="col" htmlFor="bitcoin">
                   Bitcoin
@@ -96,7 +97,7 @@ const Checkout2: React.FC = () => {
                   Expiration date<span className="text-danger">*</span>
                 </label>
                 <div>
-                  <select className="" id="expirationDate">
+                  <select className="" name="expMonth" id="expirationDate">
                     <option value="">MM</option>
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
@@ -104,7 +105,7 @@ const Checkout2: React.FC = () => {
                     <option value="Apr">Apr</option>
                     <option value="May">May</option>
                     <option value="Jun">Jun</option>
-                    <option value="Jul">Jul</option>
+                    <option value="Jul" selected>Jul</option>
                     <option value="Aug">Aug</option>
                     <option value="Sep">Sep</option>
                     <option value="Oct">Oct</option>
@@ -120,7 +121,7 @@ const Checkout2: React.FC = () => {
                     <option value="May">2027</option>
                     <option value="Jun">2028</option>
                     <option value="Jul">2029</option>
-                    <option value="Aug">2030</option>
+                    <option value="Aug" selected>2030</option>
                     <option value="Sep">2031</option>
                     <option value="Oct">2032</option>
                     <option value="Nov">2033</option>
@@ -139,11 +140,13 @@ const Checkout2: React.FC = () => {
             </div>
             {/* billing address checkbox  */}
             <div className="row">
-              <input className="col-1" type="checkbox" id="billing" checked/>
-              <label className="col" htmlFor="billing">My billing address is the same as my delivery address</label>
+              <input className="col-1" type="checkbox" id="billing" defaultChecked />
+              <label className="col" htmlFor="billing">
+                My billing address is the same as my delivery address
+              </label>
             </div>
             {/* Back and submit buttons */}
-            <Link className="btn btn-warning" to="/review">
+            <Link className="btn btn-warning" to="/Checkout3">
               Review your order before submitting
             </Link>
             <Link className=" text-center" to="/checkout1">

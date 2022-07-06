@@ -8,7 +8,7 @@ import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
 import Checkout1 from "./pages/Checkout1";
 import Checkout2 from "./pages/Checkout2";
-import ReviewPage from "./pages/ReviewPage";
+import Checkout3 from "./pages/Checkout3";
 
 const App: React.FC = () => {
   const [currentCategory, setcurrentCategory] = useState<string>("all");
@@ -39,8 +39,15 @@ const App: React.FC = () => {
 
   const [cart, setCart] = useState<Array<ProductType>>([]);
   const [cartOn, setCartOn] = useState<Boolean>(false);
+  const [buyNow, setbuyNow] = useState<ProductType>();
   const showCart = () => setCartOn(true);
   const closeCart = () => setCartOn(false);
+
+  const setBuyNow = (item: ProductType): void => {
+    let tempCart = cart.slice();
+    tempCart=[item];
+    setCart(tempCart);
+  };
 
   // array.slice() is required to re-render the array state maps.
   const addToCart = (item: ProductType) => {
@@ -99,10 +106,6 @@ const App: React.FC = () => {
     return total;
   };
 
-  useEffect(() => {
-    // console.log(cart);
-  }, [cart]);
-
   return (
     <div id="App">
       <HashRouter basename="/">
@@ -121,13 +124,30 @@ const App: React.FC = () => {
           ></Route>
           <Route
             path="/:productId"
-            element={<ProductPage cart={cart} addToCart={addToCart} showCart={showCart} />}
+            element={
+              <ProductPage
+                cart={cart}
+                addToCart={addToCart}
+                showCart={showCart}
+                setBuyNow={setBuyNow}
+              />
+            }
           ></Route>
           <Route path="/checkout1" element={<Checkout1 />}></Route>
           <Route path="/checkout2" element={<Checkout2 />}></Route>
           <Route
-            path="/review"
-            element={<ReviewPage cart={cart} getCartTotal={getCartTotal} />}
+            path="/Checkout3"
+            element={
+              <Checkout3
+                buyNow={buyNow}
+                cart={cart}
+                getCartTally={getCartTally}
+                getCartTotal={getCartTotal}
+                removeFromCart={removeFromCart}
+                incrementCartItem={incrementCartItem}
+                decrementCartItem={decrementCartItem}
+              />
+            }
           ></Route>
         </Routes>
       </HashRouter>

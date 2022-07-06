@@ -6,12 +6,12 @@ const HomePage: React.FC = () => {
     <div className="pt-5 container-lg mb-3">
       <div className="row g-4 justify-content-center align-items-center">
         <div className="col-md-5 text-center text-md-start">
-          <div className="display-3 text-white">Dominate your cyberspace</div>
-          <p className="display-5 text-muted ">
-            with the power of <span className="text-warning">lightning</span>
-          </p>
+          <div className="display-3 text-warning">Dominate your</div>
+          <div className="display-3 text-warning">cyberspace</div>
+          <div className="display-5 text-danger ">with the power of</div>
+          <div className="display-3 text-info">Lightning</div>
           <div className="m-5 text-center">
-            <Link className="btn btn-light btn-lg" to="/shop">
+            <Link className="btn btn-info btn-lg" to="/shop">
               Shop Now
             </Link>
           </div>
@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
         <div className="col-md-5 text-center d-block position-relative">
           <Link className="noUnderline text-white position-relative" to="/lightning1">
             <img src={featureImg} className="img-fluid" alt="lightning1" />
-            <a className="noUnderline">Lightning 1 Gaming PC</a>
+            <a className="noUnderline text-info">Lightning 1 Gaming PC</a>
           </Link>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import allProducts from "../data/products/allProducts";
 import Stars from "../components/Stars";
 import ImageViewer from "../components/ImageViewer";
@@ -8,9 +8,10 @@ interface props {
   cart: ProductType[];
   addToCart: (product: ProductType) => void;
   showCart: () => void;
+  setBuyNow: (product: ProductType) => void;
 }
 
-const ProductPage: React.FC<props> = ({ cart, addToCart, showCart}) => {
+const ProductPage: React.FC<props> = ({ cart, addToCart, showCart,setBuyNow}) => {
   let productId = useParams().productId;
 
   let product = allProducts.find((item) => {
@@ -35,12 +36,12 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart}) => {
         <div className="col-12 col-md-6 text-center text-white ">
           <div className="row ">
             {/* product name and stars*/}
-            <div className="col-12 col-sm-8">
-              <div className="display-3 ">{product.name}</div>
+            <div className="col-12 col-sm-6">
+              <div className="display-4 ">{product.name}</div>
               <Stars />
             </div>
             {/* Add and Buy buttons*/}
-            <div className="col-12 col-sm-4 d-flex  flex-column justify-content-center ">
+            <div className="col-12 col-sm-6 d-flex  flex-column justify-content-center ">
               <button
                 className="btn btn-success text-white hover-underline-animation m-1"
                 id={product.id}
@@ -51,15 +52,17 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart}) => {
               >
                 Add To Cart
               </button>
-              <button
+              <Link
+                to="/checkout1"
                 className=" btn btn-primary text-white hover-underline-animation m-1"
                 id={product.id}
                 onClick={() => {
                   console.log("Buy", product.id);
+                  setBuyNow(product)
                 }}
               >
                 Buy It Now
-              </button>
+              </Link>
               <h3 className="">${product.price.toFixed(2)}</h3>
               <div className="text-warning">Free Shipping</div>
             </div>

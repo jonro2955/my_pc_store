@@ -9,7 +9,7 @@ const Checkout1: React.FC = () => {
         <div className="col-8  p-3">
           {/* Form */}
           <form className="d-flex flex-column gap-1" action="#" method="get ">
-            <h3 className="text-center">Customer Information</h3>
+            <h3 className="text-center">Customer Information (Sample)</h3>
             <div>
               <label htmlFor="name" title="Required">
                 Name<span className="text-danger">*</span>
