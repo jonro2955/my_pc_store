@@ -10,7 +10,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/bg.jpg);
   background-repeat: repeat-y;
   background-position: center;
-  background-size:cover;
+  background-size: cover;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -42,7 +42,7 @@ code {
 .zoom:hover {
   transform: scale(1.1);
 }
-.noUnderLine {
+.noUnderline {
   text-decoration: none;
 }
 .rating {
@@ -58,4 +58,3 @@ code {
   content: "\2605";
   position: absolute;
 }
-

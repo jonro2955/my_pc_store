@@ -6,7 +6,7 @@ const computers = [
   {
     id: "lightning1",
     name: "Lightning 1",
-    description: "Ryzen 5 / Nvidia RTX / 8GB RAM / 1TB SSD",
+    description: "AMD Ryzen 5 / Nvidia RTX / 8GB RAM / 1TB SSD",
     category: "computers",
     price: 1000,
     quantity: 1,
@@ -16,7 +16,7 @@ const computers = [
   {
     id: "lightning2",
     name: "Lightning 2",
-    description: "Ryzen 7 / Nvidia GTX / 16GB RAM / 2TB SSD",
+    description: "AMD Ryzen 7 / Nvidia GTX / 16GB RAM / 2TB SSD",
     category: "computers",
     price: 1500,
     quantity: 1,
@@ -26,7 +26,7 @@ const computers = [
   {
     id: "lightning3",
     name: "Lightning 3",
-    description: "Ryzen 9 / Nvidia Titan / 32GB RAM / 3TB SSD",
+    description: "AMD Ryzen 9 / Nvidia Titan / 32GB RAM / 3TB SSD",
     category: "computers",
     price: 2000,
     quantity: 1,

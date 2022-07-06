@@ -101,7 +101,7 @@ const CartModal: React.FC<props> = ({
                 {/* Subtotal */}
                 <h4 className="p-2">{`Subtotal: $${getCartTotal().toFixed(2)}`}</h4>
                 {/* Checkout button */}
-                <a className="btn btn-warning" href="/#/checkout" onClick={closeCart}>
+                <a className="btn btn-warning" href="/#/checkout1" onClick={closeCart}>
                   Checkout
                 </a>
               </>

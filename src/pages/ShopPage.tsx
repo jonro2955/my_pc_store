@@ -62,7 +62,7 @@ const ShopPage: React.FC<props> = ({ currentCategory, setcurrentCategory }) => {
                 className="zoom text-center d-flex flex-column justify-content-between col-9 col-sm-6 col-md-4 col-lg-3 pb-3 m-1 m-sm-2 m-md-3 m-lg-4"
                 key={i}
               >
-                <Link className="noUnderLine text-white " to={`/${product.id}`}>
+                <Link className="noUnderline text-white " to={`/${product.id}`}>
                   <img src={product.image} className="img-fluid" alt={product.name} />
                   <div className="fw-bold">{product.name}</div>
                   <Stars />

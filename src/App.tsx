@@ -1,12 +1,14 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { ProductType } from "./data/typeModels";
 import Navbar from "./components/Navbar";
+import CartModal from "./components/CartModal";
 import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import { ProductType } from "./data/typeModels";
-import CartModal from "./components/CartModal";
+import Checkout1 from "./pages/Checkout1";
+import Checkout2 from "./pages/Checkout2";
+import ReviewPage from "./pages/ReviewPage";
 
 const App: React.FC = () => {
   const [currentCategory, setcurrentCategory] = useState<string>("all");
@@ -97,7 +99,6 @@ const App: React.FC = () => {
     return total;
   };
 
-
   useEffect(() => {
     // console.log(cart);
   }, [cart]);
@@ -105,7 +106,11 @@ const App: React.FC = () => {
   return (
     <div id="App">
       <HashRouter basename="/">
-        <Navbar setcurrentCategory={setcurrentCategory} getCartTally={getCartTally} showCart={showCart} />
+        <Navbar
+          setcurrentCategory={setcurrentCategory}
+          getCartTally={getCartTally}
+          showCart={showCart}
+        />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route
@@ -118,9 +123,11 @@ const App: React.FC = () => {
             path="/:productId"
             element={<ProductPage cart={cart} addToCart={addToCart} showCart={showCart} />}
           ></Route>
+          <Route path="/checkout1" element={<Checkout1 />}></Route>
+          <Route path="/checkout2" element={<Checkout2 />}></Route>
           <Route
-            path="/checkout"
-            element={<CheckoutPage cart={cart} getCartTotal={getCartTotal} />}
+            path="/review"
+            element={<ReviewPage cart={cart} getCartTotal={getCartTotal} />}
           ></Route>
         </Routes>
       </HashRouter>
