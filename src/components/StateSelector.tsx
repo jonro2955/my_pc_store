@@ -1,6 +1,6 @@
 const CountrySelector: React.FC = () => {
   return (
-    <select value="NY" className="w-100">
+    <select className="w-100" defaultValue="NY">
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>

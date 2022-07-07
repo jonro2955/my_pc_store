@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ProductType } from "./data/typeModels";
 import Navbar from "./components/Navbar";
 import CartModal from "./components/CartModal";
@@ -9,11 +9,12 @@ import ProductPage from "./pages/ProductPage";
 import Checkout1 from "./pages/Checkout1";
 import Checkout2 from "./pages/Checkout2";
 import Checkout3 from "./pages/Checkout3";
+import ThankPage from "./pages/ThankPage";
 
 const App: React.FC = () => {
   const [currentCategory, setcurrentCategory] = useState<string>("all");
   /* 
-  interface Product {
+  interface ProductType {
     id: string,
     name: string,
     description:string,
@@ -23,31 +24,12 @@ const App: React.FC = () => {
     image: string,
     gallery: string[],
   }
-
-  example: 
-  {
-    id: "keyboard",
-    name: "Keyboard",
-    description:"Backlit / Brightness Dial",
-    category: "accessories",
-    price: 50,
-    quantity: 1,
-    image: acc1,
-    gallery: [acc1],
-  }
   */
 
   const [cart, setCart] = useState<Array<ProductType>>([]);
   const [cartOn, setCartOn] = useState<Boolean>(false);
-  const [buyNow, setbuyNow] = useState<ProductType>();
   const showCart = () => setCartOn(true);
   const closeCart = () => setCartOn(false);
-
-  const setBuyNow = (item: ProductType): void => {
-    let tempCart = cart.slice();
-    tempCart=[item];
-    setCart(tempCart);
-  };
 
   // array.slice() is required to re-render the array state maps.
   const addToCart = (item: ProductType) => {
@@ -106,6 +88,18 @@ const App: React.FC = () => {
     return total;
   };
 
+  const setBuyNow = (item: ProductType): void => {
+    let tempCart = cart.slice();
+    tempCart = [item];
+    setCart(tempCart);
+  };
+
+  const clearCart = (): void => {
+    let tempCart = cart.slice();
+    tempCart = [];
+    setCart(tempCart);
+  };
+
   return (
     <div id="App">
       <HashRouter basename="/">
@@ -139,16 +133,17 @@ const App: React.FC = () => {
             path="/Checkout3"
             element={
               <Checkout3
-                buyNow={buyNow}
                 cart={cart}
                 getCartTally={getCartTally}
                 getCartTotal={getCartTotal}
                 removeFromCart={removeFromCart}
                 incrementCartItem={incrementCartItem}
                 decrementCartItem={decrementCartItem}
+                clearCart={clearCart}
               />
             }
           ></Route>
+          <Route path="/thankyou" element={<ThankPage />}></Route>
         </Routes>
       </HashRouter>
       <CartModal

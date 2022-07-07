@@ -25,7 +25,8 @@ const Checkout2: React.FC = () => {
                   id="card"
                   name="payment_type"
                   value="PayPal"
-                  defaultChecked
+                  onChange={() => {}}
+                  checked
                 />
                 <label className="col" htmlFor="card">
                   Credit Card
@@ -44,7 +45,6 @@ const Checkout2: React.FC = () => {
                   type="radio"
                   id="paypal"
                   name="payment_type"
-                  value="PayPal"
                   disabled
                 />
                 <label className="col" htmlFor="paypal">
@@ -61,7 +61,6 @@ const Checkout2: React.FC = () => {
                   type="radio"
                   id="bitcoin"
                   name="payment_type"
-                  value="PayPal"
                   disabled
                 />
                 <label className="col" htmlFor="bitcoin">
@@ -88,6 +87,7 @@ const Checkout2: React.FC = () => {
                 className="w-100"
                 id="cardNumber"
                 value="1234 5678 9012 3456"
+                onChange={() => {}}
                 readOnly
               />
             </div>
@@ -97,35 +97,39 @@ const Checkout2: React.FC = () => {
                   Expiration date<span className="text-danger">*</span>
                 </label>
                 <div>
-                  <select className="" name="expMonth" id="expirationDate">
-                    <option value="">MM</option>
+                  <select
+                    value="Jul"
+                    className=""
+                    name="expMonth"
+                    id="expirationDate"
+                    onChange={() => {}}
+                  >
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
                     <option value="Mar">Mar</option>
                     <option value="Apr">Apr</option>
                     <option value="May">May</option>
                     <option value="Jun">Jun</option>
-                    <option value="Jul" selected>Jul</option>
+                    <option value="Jul">Jul</option>
                     <option value="Aug">Aug</option>
                     <option value="Sep">Sep</option>
                     <option value="Oct">Oct</option>
                     <option value="Nov">Nov</option>
                     <option value="Dec">Dec</option>
                   </select>
-                  <select className="" id="expirationDate">
-                    <option value="">YY</option>
-                    <option value="Jan">2023</option>
-                    <option value="Feb">2024</option>
-                    <option value="Mar">2025</option>
-                    <option value="Apr">2026</option>
-                    <option value="May">2027</option>
-                    <option value="Jun">2028</option>
-                    <option value="Jul">2029</option>
-                    <option value="Aug" selected>2030</option>
-                    <option value="Sep">2031</option>
-                    <option value="Oct">2032</option>
-                    <option value="Nov">2033</option>
-                    <option value="Dec">2034</option>
+                  <select value="30" className="" id="expirationDate" onChange={() => {}}>
+                    <option value="23">2023</option>
+                    <option value="24">2024</option>
+                    <option value="25">2025</option>
+                    <option value="26">2026</option>
+                    <option value="27">2027</option>
+                    <option value="28">2028</option>
+                    <option value="29">2029</option>
+                    <option value="30">2030</option>
+                    <option value="31">2031</option>
+                    <option value="32">2032</option>
+                    <option value="33">2033</option>
+                    <option value="34">2034</option>
                   </select>
                 </div>
               </div>
@@ -134,7 +138,7 @@ const Checkout2: React.FC = () => {
                   Security code<span className="text-danger">*</span>
                 </label>
                 <div>
-                  <input type="text" size={3} id="cvv" value="123" />
+                  <input type="text" size={3} id="cvv" value="123" onChange={() => {}} />
                 </div>
               </div>
             </div>

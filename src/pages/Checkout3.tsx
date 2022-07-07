@@ -1,35 +1,35 @@
 import { ProductType } from "../data/typeModels";
-import { useEffect, useState } from "react";
 import visaIcon from "../images/icon-visa.svg";
+import { Link } from "react-router-dom";
 
 interface props {
-  buyNow: any;
   cart: ProductType[];
   getCartTally: () => number;
   getCartTotal: () => number;
   removeFromCart: (index: number) => void;
   incrementCartItem: (index: number) => void;
   decrementCartItem: (index: number) => void;
+  clearCart: () => void;
 }
 
 const Checkout3: React.FC<props> = ({
-  buyNow,
   cart,
   getCartTally,
   getCartTotal,
   removeFromCart,
   incrementCartItem,
   decrementCartItem,
+  clearCart,
 }) => {
-
   return (
     <div className="container rounded">
       <p className="display-6 text-white text-center">Checkout</p>
-      <div className="row justify-content-center align-items-start bg-white rounded">
+      <div className="row justify-content-center align-items-start bg-white rounded pb-3">
         <div className="col-lg-8 p-3 ">
           <h3 className="text-center mb-3">Please confirm and submit your order</h3>
-          {/*  */}
+          {/* flexbox: row when screen is larger than lg, column otherwise*/}
           <div className="d-flex flex-column flex-lg-row gap-3 justify-content-between">
+            {/* delivery address */}
             <div className="d-flex flex-column ">
               <p className="fw-bold">Delivery Address</p>
               <div>John Doe</div>
@@ -38,10 +38,11 @@ const Checkout3: React.FC<props> = ({
               <div>NY, 12345</div>
               <div>United States</div>
             </div>
-            <div className=" d-flex flex-column">
+            {/* payment method */}
+            <div className="d-flex flex-column">
               <p className="fw-bold">Payment Method</p>
               <div className="gap-2">
-                <div className="d-flex flex-column flex-lg-row align-items-start">
+                <div className="d-flex flex-column align-items-start">
                   <img height="25" src={visaIcon} alt="visa icon" />
                   <div className="">
                     <div> Visa ...3456</div>
@@ -50,10 +51,8 @@ const Checkout3: React.FC<props> = ({
                 </div>
               </div>
             </div>
-            <div
-              className=" d-flex flex-column rounded py-2 px-5"
-              style={{ boxShadow: "0px 0px 5px 2px rgba(0, 0, 0, 0.35)" }}
-            >
+            {/* order summary */}
+            <div className="orderSummary d-flex flex-column rounded py-2 px-5">
               <p className="fw-bold">Order Summary</p>
               <div className="d-flex justify-content-between gap-3">
                 Sub total: <span>${getCartTotal().toFixed(2)}</span>{" "}
@@ -66,17 +65,22 @@ const Checkout3: React.FC<props> = ({
               </div>
               <hr />
               <div className="d-flex justify-content-between fw-bold gap-3">
-                Total: <span>${getCartTotal().toFixed(2)}</span>
+                <span>{`Total (${getCartTally()} items):`}</span>
+                <span>${getCartTotal().toFixed(2)}</span>
+              </div>
+              <div className="text-center pt-3">
+                {getCartTotal() ? (
+                  <Link to="/thankyou" className="btn btn-warning w-100" onClick={clearCart}>
+                    Submit your order
+                  </Link>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
-          <div className="text-center pt-3">
-            <a className="btn btn-warning w-100">Submit your order</a>
-          </div>
-
-          {/*  */}
         </div>
-        {/*  */}
+        {/* order details */}
         <h5 className="text-center mb-3">Order Details</h5>
         {cart.map((item, i) => (
           <div className="container w-75 mb-1 bg-primary rounded p-2" key={i}>
@@ -133,13 +137,14 @@ const Checkout3: React.FC<props> = ({
           </div>
         ))}
         {/*  */}
+        <div className="text-center">
+          <Link className="btn btn-success" to="/shop">
+            Add more items to cart
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Checkout3;
-
-/* 
-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-*/
