@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
         <div className="col-md-5 text-center d-block position-relative">
           <Link className="noUnderline text-white position-relative" to="/lightning1">
             <img src={featureImg} className="img-fluid" alt="lightning1" />
-            <a className="noUnderline text-info">Lightning 1 Gaming PC</a>
+            <div className="noUnderline text-info">Lightning 1 Gaming PC</div>
           </Link>
         </div>
       </div>
