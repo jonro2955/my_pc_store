@@ -1,6 +1,6 @@
 # my_pc_store
 
-## [Live Site](hosted_url) <br>
+## [Live Site](https://jonro2955.github.io/my_pc_store/) <br>
 
 This is a mock online shop that sells pre-built gaming PCs and accessories. It lists a select number of high quality products for sale in a visually impressive way. Customers can browse the inventory in its entirety or by category, examine products in detail, add items into the cart, and go through the checkout process to make a sample purchase.  
 
