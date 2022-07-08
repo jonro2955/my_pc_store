@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="pt-5 container-lg mb-3 rounded">
       <div className="row g-4 justify-content-center align-items-center">
-        <div className="col-md-5 text-center text-md-start">
+        <div className="zoom col-md-5 text-center text-md-start">
           <div className={`display-3 text-warning homeText1 ${isMounted && "homeTextslide"}`}>
             Dominate your
           </div>
