@@ -9,7 +9,7 @@ This website is built using React with TypeScript, and it contains 3 key feature
 2. A product list page featuring a category filter that is clearly defined easy to use.
 3. A convenient cart and checkout system that makes purchasing easy.
 
-A key lesson from this project was incorporating the Bootstrap CSS framework to create a mobile-first responsive web app that adjusts well to a variety of screen sizes. A secondary goal was to combine React with TypeScript to create a robust app that is less likely to produce runtime errors.  
+A key lesson from this project was incorporating the Bootstrap CSS framework to create a mobile-first responsive web app that adjusts well to a variety of screen sizes. It also provided a great opportunity to practice my React and TypeScript programming skills to create a robust and user friendly app.  
 
 <hr/>
 
