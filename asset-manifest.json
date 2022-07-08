@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my_pc_store/static/css/main.c6f804eb.css",
-    "main.js": "/my_pc_store/static/js/main.de3fc2b0.js",
+    "main.js": "/my_pc_store/static/js/main.b3cff153.js",
     "static/media/monitor3b.png": "/my_pc_store/static/media/monitor3b.6cc8c0240c829e442b24.png",
     "static/media/lightning2.webp": "/my_pc_store/static/media/lightning2.93132ddf40e63c1434b4.webp",
     "static/media/lightning3.webp": "/my_pc_store/static/media/lightning3.c1008d5a5e4c604776d3.webp",
@@ -27,8 +27,8 @@
     "static/media/monitor2a.webp": "/my_pc_store/static/media/monitor2a.6416e22696845e91a6fd.webp",
     "static/media/monitor1a.webp": "/my_pc_store/static/media/monitor1a.9a162478e9b63fa53d22.webp",
     "static/media/monitor1.webp": "/my_pc_store/static/media/monitor1.5ecc05eddec32d4248cf.webp",
+    "static/media/acc1b.webp": "/my_pc_store/static/media/acc1b.0b3a963be793c293d8df.webp",
     "static/media/monitor2b.webp": "/my_pc_store/static/media/monitor2b.780c37b82b3077768780.webp",
-    "static/media/acc1b.webp": "/my_pc_store/static/media/acc1b.f6d49d4173ee0f68d9ec.webp",
     "static/media/acc3a.png": "/my_pc_store/static/media/acc3a.4906a5f4a7604d1c6403.png",
     "static/media/acc3.webp": "/my_pc_store/static/media/acc3.4119ffed38c258a61fc5.webp",
     "static/media/icon-mc.svg": "/my_pc_store/static/media/icon-mc.8b1d63466bbf552f40cf50cd438292b3.svg",
@@ -39,10 +39,10 @@
     "static/media/icon-visa.svg": "/my_pc_store/static/media/icon-visa.9ffefcfcfc1e469b0dd41135c174aa94.svg",
     "index.html": "/my_pc_store/index.html",
     "main.c6f804eb.css.map": "/my_pc_store/static/css/main.c6f804eb.css.map",
-    "main.de3fc2b0.js.map": "/my_pc_store/static/js/main.de3fc2b0.js.map"
+    "main.b3cff153.js.map": "/my_pc_store/static/js/main.b3cff153.js.map"
   },
   "entrypoints": [
     "static/css/main.c6f804eb.css",
-    "static/js/main.de3fc2b0.js"
+    "static/js/main.b3cff153.js"
   ]
 }
