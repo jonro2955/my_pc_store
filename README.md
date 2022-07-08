@@ -30,9 +30,9 @@ The main challenge for this project was incorporating the Bootstrap CSS framewor
 
 ### Acknowledgements
 
-[www.ibuypower.com](www.ibuypower.com) <br>
-[www.msi.com](www.msi.com) <br>
-[www.gigabyte.com](www.gigabyte.com) <br>
+[https://www.ibuypower.com/](https://www.ibuypower.com/) <br>
+[https://www.msi.com/](https://www.msi.com/) <br>
+[https://www.gigabyte.com](https://www.gigabyte.com) <br>
 
 ### License
 
