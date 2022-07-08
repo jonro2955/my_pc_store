@@ -5,7 +5,7 @@
 This project is a demonstration of an online shop that sells pre-built gaming PCs and accessories. It lists a number of high quality products for sale in a visually impressive way. Customers can browse the inventory in its entirety or by category, examine individual products in detail, add items to the cart, and go through the checkout process.  
 
 This website is built using React with TypeScript, and it contains 4 key features of e-commerce sites:
-1. An effective landing page that encourages customer conversion or action.
+1. An landing page that encourages customer conversion or action.
 2. A clearly laid out product list page featuring a category filter that is easy to use.
 3. A product page that showcases each product in a visually appealing way.
 3. A convenient checkout system that makes purchasing easy.
