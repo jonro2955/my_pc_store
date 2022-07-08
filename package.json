@@ -21,7 +21,10 @@
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://jonro2955.github.io/my_pc_store/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "sass": "^1.53.0"
   }
 }
