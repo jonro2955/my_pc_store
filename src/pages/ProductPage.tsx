@@ -43,7 +43,7 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart,setBuyNow}) =>
             {/* Add and Buy buttons*/}
             <div className="col-12 col-sm-6 d-flex  flex-column justify-content-center ">
               <button
-                className="btn btn-success text-white hover-underline-animation m-1"
+                className="btn btn-success text-white m-1"
                 id={product.id}
                 onClick={() => {
                   addToCart(product);
@@ -54,10 +54,9 @@ const ProductPage: React.FC<props> = ({ cart, addToCart, showCart,setBuyNow}) =>
               </button>
               <Link
                 to="/checkout1"
-                className=" btn btn-primary text-white hover-underline-animation m-1"
+                className=" btn btn-primary text-white m-1"
                 id={product.id}
                 onClick={() => {
-                  console.log("Buy", product.id);
                   setBuyNow(product)
                 }}
               >

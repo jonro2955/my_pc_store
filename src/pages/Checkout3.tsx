@@ -119,7 +119,7 @@ const Checkout3: React.FC<props> = ({
                       className="text-center"
                       type="number"
                       value={item.quantity || 1}
-                      style={{ width: "2em" }}
+                      style={{ width: "3em" }}
                       readOnly
                     />
                     <button
@@ -136,12 +136,14 @@ const Checkout3: React.FC<props> = ({
             </div>
           </div>
         ))}
-        {/*  */}
-        <div className="text-center">
-          <Link className="btn btn-success" to="/shop">
-            Add more items to cart
+        {getCartTotal() ? (
+          <Link to="/thankyou" className="btn btn-warning w-75 m-3" onClick={clearCart}>
+            Submit your order
           </Link>
-        </div>
+        ) : (
+          ""
+        )}
+        <div className="text-center"></div>
       </div>
     </div>
   );

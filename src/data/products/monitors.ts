@@ -3,10 +3,10 @@ import monitor2 from "../../images/monitor2.webp";
 import monitor3 from "../../images/monitor3.webp";
 import monitor1a from "../../images/monitor1a.webp";
 import monitor2a from "../../images/monitor2a.webp";
-import monitor3a from "../../images/monitor3a.webp";
+import monitor3a from "../../images/monitor3a.png";
 import monitor1b from "../../images/monitor1b.webp";
 import monitor2b from "../../images/monitor2b.webp";
-import monitor3b from "../../images/monitor3b.webp";
+import monitor3b from "../../images/monitor3b.png";
 
 
 
@@ -24,7 +24,7 @@ const monitors = [
   {
     id: "msi-monitor",
     name: "MSI Monitor",
-    description: '31.5" / 2560x1440 / 165Hz / 1ms',
+    description: '27" / 2560x1440 / 165Hz / 1ms',
     category: "monitors",
     price: 250,
     quantity: 1,

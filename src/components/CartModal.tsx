@@ -1,7 +1,6 @@
 import { ProductType } from "../data/typeModels";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Offcanvas } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 interface props {
   cart: ProductType[];
@@ -23,7 +22,6 @@ const cartTotal = (cartProp: ProductType[]): number => {
   return total;
 };
 
-// https://amielfilarca.me/shopping-cart
 const CartModal: React.FC<props> = ({
   cart,
   cartOn,
@@ -46,26 +44,25 @@ const CartModal: React.FC<props> = ({
               <div className="container mb-1 bg-primary rounded p-2" key={i}>
                 <div className="row">
                   {/* left col: item image */}
-                  <div className="col-12 col-sm-3 d-flex justify-content-center align-items-center ">
+                  <div className="col-12 col-sm-3 d-flex justify-content-center align-items-center">
                     <img src={item.image} className="img-fluid" alt={item.name} />
                   </div>
                   <div className="col">
                     {/* right col line 1: item name and price */}
-                    <div className="d-flex justify-content-between align-items-start text-center">
+                    <div className="d-flex justify-content-between align-items-start text-center  text-black">
                       <h5>{item.name}</h5>
                       <div>Price: ${item.price.toFixed(2)}</div>
                     </div>
                     {/* right col line 2: quantity control buttons */}
                     <div className="d-flex justify-content-between align-items-center text-center">
-                      <a
-                        className="text-white "
-                        role="button"
+                      <div
+                        className="text-white btn btn-link"
                         onClick={() => {
                           removeFromCart(i);
                         }}
                       >
                         <small>Remove</small>
-                      </a>
+                      </div>
                       <div className="d-flex text-center">
                         <button
                           className="btn btn-sm btn-info"
@@ -79,7 +76,7 @@ const CartModal: React.FC<props> = ({
                           className="text-center"
                           type="number"
                           value={item.quantity || 1}
-                          style={{ width: "2em" }}
+                          style={{ width: "3em" }}
                           readOnly
                         />
                         <button

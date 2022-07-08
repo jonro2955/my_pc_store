@@ -9,7 +9,7 @@ const Checkout1: React.FC = () => {
         <div className="col-8  p-3">
           {/* Form */}
           <form className="d-flex flex-column gap-1" action="#" method="get ">
-            <h3 className="text-center">Customer Information (Sample)</h3>
+            {/* <h3 className="text-center">Customer Information (Sample)</h3> */}
             <div>
               <label htmlFor="name" title="Required">
                 Name<span className="text-danger">*</span>
@@ -64,7 +64,7 @@ const Checkout1: React.FC = () => {
               </label>
               <input type="text" className="w-100" id="zip" value="12345" readOnly />
             </div>
-            <a className="btn btn-warning" href="/#/checkout2">
+            <a className="btn btn-warning m-1" href="/#/checkout2">
               Continue to Fake Payment
             </a>
           </form>

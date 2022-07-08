@@ -144,17 +144,17 @@ const Checkout2: React.FC = () => {
             </div>
             {/* billing address checkbox  */}
             <div className="row">
-              <input className="col-1" type="checkbox" id="billing" defaultChecked />
+              <input className="col-1" type="checkbox" id="billing" defaultChecked disabled/>
               <label className="col" htmlFor="billing">
                 My billing address is the same as my delivery address
               </label>
             </div>
             {/* Back and submit buttons */}
+            <Link className="m-3 text-center" to="/checkout1">
+              Back
+            </Link>
             <Link className="btn btn-warning" to="/Checkout3">
               Review your order before submitting
-            </Link>
-            <Link className=" text-center" to="/checkout1">
-              Back
             </Link>
           </form>
         </div>

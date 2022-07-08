@@ -11,7 +11,7 @@ const ThankPage: React.FC = () => {
             Your order will be shipped shortly. We will send you an email notification when your
             order ships. 
           </div>
-          <div>Have a nice day!</div>
+          <div>Have a nice day.</div>
           <div className="mt-3">
             <Link className="btn btn-success" to="/shop">Continue shopping</Link>
           </div>
