@@ -2,7 +2,7 @@
 
 ## [Live Site](https://jonro2955.github.io/my_pc_store/) <br>
 
-This project is a demonstration of an online shop that sells pre-built gaming PCs and accessories. It lists a select number of high quality products for sale in a visually impressive way. Customers can browse the inventory in its entirety or by category, examine individual products in detail, add items to the cart, and go through the checkout process.  
+This project is a demonstration of an online shop that sells pre-built gaming PCs and accessories. It lists a number of high quality products for sale in a visually impressive way. Customers can browse the inventory in its entirety or by category, examine individual products in detail, add items to the cart, and go through the checkout process.  
 
 This website is built using React with TypeScript, and it contains 3 key features of e-commerce sites:
 1. An effective landing page that encourages customer conversion or action.
