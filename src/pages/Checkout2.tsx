@@ -40,13 +40,7 @@ const Checkout2: React.FC = () => {
               </div>
               {/* paypal */}
               <div className="row border-top p-1">
-                <input
-                  className="col-1"
-                  type="radio"
-                  id="paypal"
-                  name="payment_type"
-                  disabled
-                />
+                <input className="col-1" type="radio" id="paypal" name="payment_type" disabled />
                 <label className="col" htmlFor="paypal">
                   PayPal
                 </label>
@@ -56,13 +50,7 @@ const Checkout2: React.FC = () => {
               </div>
               {/* bitcoin */}
               <div className="row border-top border-bottom p-1">
-                <input
-                  className="col-1"
-                  type="radio"
-                  id="bitcoin"
-                  name="payment_type"
-                  disabled
-                />
+                <input className="col-1" type="radio" id="bitcoin" name="payment_type" disabled />
                 <label className="col" htmlFor="bitcoin">
                   Bitcoin
                 </label>
@@ -144,7 +132,7 @@ const Checkout2: React.FC = () => {
             </div>
             {/* billing address checkbox  */}
             <div className="row">
-              <input className="col-1" type="checkbox" id="billing" defaultChecked disabled/>
+              <input className="col-1" type="checkbox" id="billing" defaultChecked disabled />
               <label className="col" htmlFor="billing">
                 My billing address is the same as my delivery address
               </label>
@@ -153,7 +141,7 @@ const Checkout2: React.FC = () => {
             <Link className="m-3 text-center" to="/checkout1">
               Back
             </Link>
-            <Link className="btn btn-warning" to="/Checkout3">
+            <Link className="btn btn-warning myBoxShadow" to="/Checkout3">
               Review your order before submitting
             </Link>
           </form>

@@ -64,7 +64,7 @@ const Checkout1: React.FC = () => {
               </label>
               <input type="text" className="w-100" id="zip" value="12345" readOnly />
             </div>
-            <a className="btn btn-warning m-1" href="/my_pc_store/#/checkout2">
+            <a className="btn btn-warning m-2 myBoxShadow" href="/my_pc_store/#/checkout2">
               Continue to Fake Payment
             </a>
           </form>

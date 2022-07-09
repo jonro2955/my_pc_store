@@ -52,7 +52,7 @@ const Checkout3: React.FC<props> = ({
               </div>
             </div>
             {/* order summary */}
-            <div className="orderSummary d-flex flex-column rounded py-2 px-5">
+            <div className="myBoxShadow d-flex flex-column rounded py-2 px-5">
               <p className="fw-bold">Order Summary</p>
               <div className="d-flex justify-content-between gap-3">
                 Sub total: <span>${getCartTotal().toFixed(2)}</span>{" "}
@@ -70,7 +70,11 @@ const Checkout3: React.FC<props> = ({
               </div>
               <div className="text-center pt-3">
                 {getCartTotal() ? (
-                  <Link to="/thankyou" className="btn btn-warning w-100" onClick={clearCart}>
+                  <Link
+                    to="/thankyou"
+                    className="btn btn-warning w-100 myBoxShadow"
+                    onClick={clearCart}
+                  >
                     Submit your order
                   </Link>
                 ) : (
@@ -83,12 +87,15 @@ const Checkout3: React.FC<props> = ({
         {/* order details */}
         <h5 className="text-center mb-3">Order Details</h5>
         {cart.map((item, i) => (
-          <div className="container w-75 mb-1 bg-primary rounded p-2" key={i}>
+          <div className="container w-75 mb-3 rounded p-2 myBoxShadow" key={i}>
             <div className="row">
               {/* left col: item image */}
-              <div className="col-sm-3 d-flex justify-content-center align-items-center ">
+              <a
+                href={`/my_pc_store/#/${item.id}`}
+                className="col-sm-3 d-flex justify-content-center align-items-center "
+              >
                 <img src={item.image} className="img-fluid w-50" alt={item.name} />
-              </div>
+              </a>
               <div className="col">
                 {/* right col line 1: item name and price */}
                 <div className="d-flex justify-content-between align-items-start text-center">
@@ -98,7 +105,7 @@ const Checkout3: React.FC<props> = ({
                 {/* right col line 2: quantity control buttons */}
                 <div className="d-flex justify-content-between align-items-center text-center">
                   <a
-                    className="text-white "
+                    className=""
                     role="button"
                     onClick={() => {
                       removeFromCart(i);
@@ -137,7 +144,7 @@ const Checkout3: React.FC<props> = ({
           </div>
         ))}
         {getCartTotal() ? (
-          <Link to="/thankyou" className="btn btn-warning w-75 m-3" onClick={clearCart}>
+          <Link to="/thankyou" className="btn btn-warning w-75 m-3 myBoxShadow" onClick={clearCart}>
             Submit your order
           </Link>
         ) : (

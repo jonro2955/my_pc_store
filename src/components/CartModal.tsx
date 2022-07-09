@@ -41,22 +41,28 @@ const CartModal: React.FC<props> = ({
           <div className="text-center ">
             {/* Cart items output map: */}
             {cart.map((item, i) => (
-              <div className="container mb-1 bg-primary rounded p-2" key={i}>
+              <div className="container mb-2 rounded p-2 myBoxShadow" key={i}>
                 <div className="row">
                   {/* left col: item image */}
-                  <div className="col-12 col-sm-3 d-flex justify-content-center align-items-center">
+                  <a
+                    onClick={closeCart}
+                    href={`/my_pc_store/#/${item.id}`}
+                    className="col-12 col-sm-3 d-flex justify-content-center align-items-center"
+                  >
                     <img src={item.image} className="img-fluid" alt={item.name} />
-                  </div>
+                  </a>
                   <div className="col">
                     {/* right col line 1: item name and price */}
                     <div className="d-flex justify-content-between align-items-start text-center  text-black">
-                      <h5>{item.name}</h5>
+                      <a onClick={closeCart} href={`/my_pc_store/#/${item.id}`}>
+                        <h5>{item.name}</h5>
+                      </a>
                       <div>Price: ${item.price.toFixed(2)}</div>
                     </div>
                     {/* right col line 2: quantity control buttons */}
                     <div className="d-flex justify-content-between align-items-center text-center">
                       <div
-                        className="text-white btn btn-link"
+                        className="btn btn-link"
                         onClick={() => {
                           removeFromCart(i);
                         }}
@@ -100,7 +106,7 @@ const CartModal: React.FC<props> = ({
                 <h4 className="p-2">{`Subtotal: $${getCartTotal().toFixed(2)}`}</h4>
                 {/* Checkout button */}
                 <a
-                  className="btn btn-warning w-100"
+                  className="btn btn-warning w-100 myBoxShadow"
                   href="/my_pc_store/#/checkout1"
                   onClick={closeCart}
                 >
