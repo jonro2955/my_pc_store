@@ -8,7 +8,7 @@ This website is built using React with TypeScript, and it contains 4 key feature
 
 1. An effective landing page that encourages customer conversion or action.
 2. A clearly laid out product list page featuring a category filter that is easy to use.
-3. A product page that showcases each product in a visually appealing way.
+3. A product page that showcases each product in a visually appealing and interactive way.
 4. A convenient checkout system that makes purchasing easy.
 
 A key lesson from this project was incorporating the Bootstrap CSS framework to create a mobile-first responsive web app that automatically adjusts to a variety of screen sizes. Emphasis was placed on front end design and user experience through the use of flex boxes, grids, and event-driven animations. This project also provided a great opportunity to practice my TypeScript programming skills to create a robust and user friendly app.  
