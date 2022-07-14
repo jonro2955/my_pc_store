@@ -35,6 +35,7 @@ const ImageViewer: React.FC<{ gallery: string[] }> = (props) => {
           alt="lightning1"
           data-num="0"
           onMouseEnter={myMouseEnter}
+          onClick={() => setModalShow(true)}
         />
         <img
           src={props.gallery[1]}
@@ -43,6 +44,7 @@ const ImageViewer: React.FC<{ gallery: string[] }> = (props) => {
           alt="lightning1"
           data-num="1"
           onMouseEnter={myMouseEnter}
+          onClick={() => setModalShow(true)}
         />
         <img
           src={props.gallery[2]}
@@ -51,9 +53,9 @@ const ImageViewer: React.FC<{ gallery: string[] }> = (props) => {
           alt="lightning1"
           data-num="2"
           onMouseEnter={myMouseEnter}
+          onClick={() => setModalShow(true)}
         />
       </div>
-
       <Modal
         show={modalShow}
         onHide={() => setModalShow(false)}

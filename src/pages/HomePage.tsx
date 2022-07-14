@@ -13,22 +13,22 @@ const HomePage: React.FC = () => {
   return (
     <div className="pt-5 container-lg mb-3 rounded">
       <div className="row g-4 justify-content-center align-items-center">
-        <div className="zoom col-md-5 text-center text-md-start">
+        <div className="col-md-5 text-center text-md-start">
           <div className={`display-3 text-warning homeText1 ${isMounted && "homeTextslide"}`}>
             Dominate your
           </div>
           <div className={`display-3 text-warning homeText1 ${isMounted && "homeTextslide"}`}>
             cyberspace
           </div>
-          <div className={`display-5 text-danger homeText2 ${isMounted && "homeTextslide"}`}>
+          <div className={`display-5 text-danger homeText1 ${isMounted && "homeTextslide"}`}>
             with the power of
           </div>
-          <div className={`display-3 text-info homeText3 ${isMounted && "homeTextslide"}`}>
+          <div className={`display-3 text-info homeText1 ${isMounted && "homeTextslide"}`}>
             Lightning
           </div>
           <div className="m-5 text-md-end ">
             <Link
-              className={`btn btn-info btn-lg w-75 homeText3 ${isMounted && "homeTextslide"}`}
+              className={`btn btn-info btn-lg w-75 zoom ${isMounted && "homeTextslide"}`}
               to="/shop"
             >
               Shop Now
