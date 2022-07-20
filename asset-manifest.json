@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my_pc_store/static/css/main.778678d6.css",
-    "main.js": "/my_pc_store/static/js/main.5d17dbb7.js",
+    "main.js": "/my_pc_store/static/js/main.0b62d632.js",
     "static/media/monitor3b.png": "/my_pc_store/static/media/monitor3b.6cc8c0240c829e442b24.png",
     "static/media/lightning2.webp": "/my_pc_store/static/media/lightning2.93132ddf40e63c1434b4.webp",
     "static/media/lightning3.webp": "/my_pc_store/static/media/lightning3.c1008d5a5e4c604776d3.webp",
@@ -39,10 +39,10 @@
     "static/media/icon-visa.svg": "/my_pc_store/static/media/icon-visa.9ffefcfcfc1e469b0dd41135c174aa94.svg",
     "index.html": "/my_pc_store/index.html",
     "main.778678d6.css.map": "/my_pc_store/static/css/main.778678d6.css.map",
-    "main.5d17dbb7.js.map": "/my_pc_store/static/js/main.5d17dbb7.js.map"
+    "main.0b62d632.js.map": "/my_pc_store/static/js/main.0b62d632.js.map"
   },
   "entrypoints": [
     "static/css/main.778678d6.css",
-    "static/js/main.5d17dbb7.js"
+    "static/js/main.0b62d632.js"
   ]
 }
