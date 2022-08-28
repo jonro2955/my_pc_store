@@ -112,6 +112,13 @@ const CartModal: React.FC<props> = ({
                 >
                   Checkout
                 </a>
+                <a
+                  className="btn btn-success w-100 myBoxShadow my-3"
+                  href="/my_pc_store/#/shop"
+                  onClick={closeCart}
+                >
+                  Back To Shop
+                </a>
               </>
             ) : (
               "Your cart is empty."
